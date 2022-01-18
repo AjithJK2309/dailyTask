@@ -1,0 +1,22 @@
+<h2>Hi i am from app component</h2>
+<div >
+<form #getValue="ngForm" (ngSubmit)="formValue(getValue)" class="form">
+  <div class="form-control">
+    <label>Enter Your Name : </label><br>
+    <input type="text" [(ngModel)]="name" ngModel name="name"/><br>
+  </div>
+  <div class="form-control">
+    <label>Enter Your City : </label><br>
+    <input type="text" [(ngModel)]="city" ngModel name="city"/><br>
+  </div>
+  <div class="form-control">
+    <label>Enter Your Mobile : </label><br>
+    <input type="text" [(ngModel)]="mobile" ngModel name="mobile"/><br>
+  </div>
+  <button type="submit">Submit</button><br>
+</form>
+</div>
+
+<div>
+  <app-sample [parentData]="Arrobj"></app-sample>
+</div>

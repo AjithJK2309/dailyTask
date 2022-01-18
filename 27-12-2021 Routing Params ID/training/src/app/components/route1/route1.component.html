@@ -1,0 +1,19 @@
+<div class="empTable">
+    <h2>Employee Details</h2><br>
+    <div>
+        <table class="emp-table">
+            <thead>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+            </thead>
+            <tr *ngFor="let value of data;index as i">
+                <td>{{value.id}}</td>
+                <td class="emp" (click)="empData(value)" [class.style1]="value.id==returnId">{{value.name}}</td>
+                <td>{{value.age}}</td>
+                <td>{{value.city}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

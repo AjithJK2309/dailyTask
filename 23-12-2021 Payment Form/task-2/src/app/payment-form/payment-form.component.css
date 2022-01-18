@@ -1,0 +1,27 @@
+.form-box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.form table th,tr,td{
+    padding: 10px;
+}
+h1{
+    font-size: 30px;
+}
+tr{
+    padding: 10px;
+}
+.form-control{
+    color: rgb(161, 163, 163);
+}
+td p{
+    font-size: 17px;
+    font-weight: 500;
+}
+td input{
+    min-width: 300px;
+}

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="tab-section">
+    <ul class="nav nav-pills">
+      <li class="nav-item" routerLink="elements">
+        <b class="nav-link transition" [class.active]="active==true" aria-current="page" (click)="eleClass()">Elements</b>
+      </li>
+      <li class="nav-item" routerLink="collections/collection-list">
+        <b class="nav-link transition" [class.active]="active==false" (click)="collClass()">Collections</b>
+      </li>
+    </ul>
+    <hr>
+  </div>
+  <router-outlet></router-outlet>
+</div>

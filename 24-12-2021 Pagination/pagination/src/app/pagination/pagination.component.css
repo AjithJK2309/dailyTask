@@ -1,0 +1,23 @@
+.flex{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.button{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;    
+}
+.button button{
+    background: rgb(226, 223, 212);
+    padding: 10px;
+    border : none;
+    border-radius: 5px;
+}
+.button button:hover{
+    background: rgb(7, 121, 129) !important;
+    cursor: pointer;
+}

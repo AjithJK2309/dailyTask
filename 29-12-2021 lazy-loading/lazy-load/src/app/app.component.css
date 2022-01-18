@@ -1,0 +1,12 @@
+.nav-link.active{
+    background: transparent;
+    border-bottom: 2px solid black;
+    color: black;    
+}
+.nav-link{
+    color: black;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}

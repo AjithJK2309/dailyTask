@@ -1,0 +1,60 @@
+h2{
+    color : rgb(136, 187, 168);
+    background: rgb(223, 230, 217);
+    border-radius: 10px;
+    line-height: 35px;
+}
+.child-2{
+    padding: 10px;
+    text-align: center;
+}
+.tog-btn{
+    padding: 10px;
+    font-size: 20px;
+    background: rgb(8, 112, 56);
+    color: white;
+    border-radius: 7px;
+    text-decoration: none;
+    outline: none;
+}
+.tog-btn:hover{
+    background: rgb(8, 100, 51);
+    cursor: pointer;
+    padding-inline: 20px;
+}
+.table{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;    
+    
+}
+.table thead,tr{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    font-size: 20px;
+    padding-inline : 50px;
+    width: 50%;
+    justify-content: space-evenly;
+}
+.table thead{
+    background: rgb(201, 216, 216);
+    border-radius: 5px;
+    
+}
+.table thead th{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+    text-align: left;
+}
+.table tr{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.table tr td{
+    border-bottom: 1px solid rgb(216, 209, 209);
+    max-width: 200px;
+    text-align: center;
+}

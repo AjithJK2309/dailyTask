@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "name": "Ajith ak",
+      "email": "ajith@gmail.com",
+      "age": "25",
+      "mobile": 4554455445,
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

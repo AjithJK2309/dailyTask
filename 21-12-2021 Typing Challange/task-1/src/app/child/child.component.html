@@ -1,0 +1,10 @@
+<div>
+<p *ngFor="let receive of receivedData;index as i" class="text">( {{receivedData[i]}}<span class="color">{{receivedData2[i] }}</span> )</p><br>
+<button (click)="pageRefersh()" class="restart-btn">Restart</button>
+<!-- <button (click)="pageResult()" class="restart-btn">Result</button> -->
+<br><br>
+<!-- <p class="result">{{percent | number:'0.0-0' }}%</p> -->
+<input type="text"  ngModel #getValue (ngModelChange)="getData(getValue.value)" class="inp-box" spellcheck="false"/>
+
+    <p class="message"> {{message}}</p>
+</div>

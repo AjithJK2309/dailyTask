@@ -1,0 +1,59 @@
+<div class="form-box">
+    <form #getValue class="form">
+        <table class="form-group">
+            <thead>
+                <h1>Payment Form</h1>
+            </thead>
+            <tr>
+                <td>
+                    <label for="Payee Name">Payee Name</label><br>
+                    <input type="text" #name class="form-control" (keyup)="payeeName=name.value" spellcheck="false"/>
+                </td>
+                <td>
+                    <b>Name</b>
+                    <p>{{payeeName | titlecase}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Payment Date</label><br>
+                    <input type="date" class="form-control" value="" #date (change)="paymentDate=date.value" spellcheck="false"/>
+                </td>
+                <td>
+                    <b>Payment Date</b>
+                    <p>{{paymentDate | date : 'MMM d,yyyy'}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Payment Amount</label><br>
+                    <input type="text" class="form-control" #amount (keyup)="paymentAmountt(amount.value)" spellcheck="false"/>
+                </td>
+                <td>
+                    <b>Payment Amount</b>
+                    <p>{{paymentAmount  | currency : '$'}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Height<small>(cm)</small></label><br>
+                    <input type="text" class="form-control" #height (keyup)="heightToInch(height.value)" spellcheck="false"/>
+                </td>
+                <td>
+                    <b>Height<small>(inches)</small></b>
+                    <p>{{Height | number : '0.1'}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Miles</label><br>
+                    <input type="text" class="form-control" #Miles (keyup)="kiloMeter(Miles.value)" spellcheck="false"/>
+                </td>
+                <td>
+                    <b>Kilometers</b>
+                    <p>{{miles | number : '0.0-2'}}</p>
+                </td>
+            </tr>
+        </table>
+    </form>
+  </div>

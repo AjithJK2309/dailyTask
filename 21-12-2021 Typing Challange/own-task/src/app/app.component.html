@@ -1,0 +1,9 @@
+<div>
+  <div>
+    <h2>It is Parent Component</h2>
+    <p>{{count}}</p>
+  </div>
+  <div>
+    <app-child [parentData]="count" (childData)="addNum($event)"></app-child>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+.items .nav-item{
+    color: aliceblue;
+    padding: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.active{
+    background: rgb(114, 112, 112);
+    color: skyblue !important;
+}
+.items .nav-item:hover{
+    background: rgb(114, 112, 112);
+    color: rgb(68, 66, 66);
+}
+.table-data{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.table-data table{
+    text-align: center;
+    margin-top: 3%;
+    justify-content: center;
+    border : 1px solid rgb(175, 170, 170);
+    border-radius: 5px;
+}
+.table-data table th{
+    border-bottom:  1px solid rgb(175, 170, 170);
+}
+.table-data table th,td{
+    padding: 13px;
+}

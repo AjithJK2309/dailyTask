@@ -1,0 +1,14 @@
+<h2>I am from Sample Component</h2>
+<button (click)="toggle()">Toggle</button>
+<table *ngIf="tog">
+    <thead>
+        <th>Name</th>
+        <th>City</th>
+        <th>Mobile</th>
+    </thead>
+    <tr>
+        <td>{{parentData.name}}</td>
+        <td>{{parentData.city}}</td>
+        <td>{{parentData.mobile}}</td>
+    </tr>
+</table>

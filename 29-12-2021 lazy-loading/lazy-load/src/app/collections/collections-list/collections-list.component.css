@@ -1,0 +1,25 @@
+.collection{
+    padding: 20px;
+    border: 0.7px solid rgb(209, 206, 206);
+}
+h2{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+table thead,tr{
+    border: 0.6px solid rgb(192, 190, 190);
+    border-radius: 10px;
+    width: 25%;
+}
+table th,td{
+    padding: 10px;
+}
+table{
+    border: 1px solid rgb(192, 190, 190);
+    border-radius: 10px;
+    width:100%;
+}
+table thead{
+    background: rgb(238, 235, 235);
+}

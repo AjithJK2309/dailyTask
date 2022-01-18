@@ -1,0 +1,14 @@
+.box{
+    margin-top: 10px;
+    /* margin-inline: 40%; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 400px;
+    min-width: auto;
+    background: white;
+}

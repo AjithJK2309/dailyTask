@@ -1,0 +1,48 @@
+<!-- <div>
+  <ul class="nav nav-tabs">    
+    <li class="nav-item"><a [class.active]="viewMode=='events'" (click)="viewMode='events'">Events</a></li>&nbsp;&nbsp;
+    <li class="nav-item"><a [class.active]="viewMode=='Directives'" (click)="viewMode='Directives'">Directives</a></li>&nbsp;&nbsp;
+    <li class="nav-item"><a [class.active]="viewMode=='map'" (click)="viewMode='map'">Events</a></li>
+  </ul>
+  <div [ngSwitch]="viewMode">
+    <div [ngSwitchCase]="'events'"><app-events></app-events></div>
+    <div *ngSwitchDefault>Nothing here</div>
+  </div>
+  <!-- <div>
+    <app-events></app-events>
+  </div> -->
+
+<!-- 
+<ul class="nav nav-pills">
+  <li [class.active]="viewMode=='map'" class="btn btn-primary" *ngIf="testing"><a (click)="viewMode='map'">Map View</a></li>&nbsp;
+  <li [class.active]="viewMode=='list'" class="btn btn-danger"><a (click)="viewMode='list'">List View</a></li>&nbsp;  
+</ul>
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View Content</div>
+  <div *ngSwitchCase="'list'">List View Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div> -->
+<!-- 
+<div>
+  <button class="btn btn-primary" (click)="b1=true? b3=false:b1=false?b1=true:b3=true">b1</button>
+
+  <button class="btn btn-primary" (click)="b3=true? b3=false:b3=false?b3=true:b1=false">b3</button> -->
+  <!-- <button class="btn btn-primary" (click)="b2=true? b1=false: b1= true ">b2</button> -->
+
+<!-- </div>
+<div *ngIf="b1">B1 works</div>
+<div *ngIf="b2">B2 works2</div>
+<div *ngIf="b3">B3 works3</div> -->
+<!-- 
+//condition1 ? condition2 ? Expression1 : Expression2 : Expression3 -->
+
+<!-- return num > 0 ? "positive" : num < 0 ? "negative" : "zero"; -->
+<!-- <app-events></app-events> -->
+
+<div style="text-align: center;" [ngStyle]="style">
+ 
+  <h2>Theme</h2>
+  <p>This is a theme section</p>
+  <button (click)="style=darkStyle" class="btn btn-dark">Dark Theme</button>&nbsp;&nbsp;
+  <button (click)="style=lightStyle" class="btn btn-light">Light Theme</button>
+</div>

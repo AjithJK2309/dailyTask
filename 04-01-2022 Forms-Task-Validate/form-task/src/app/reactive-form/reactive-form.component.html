@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                    <label><b>Name : </b></label>
+                    <input type="text" class="form-control" formControlName='name'>
+                    <!-- <span *ngIf="!myForm.errors?.['required'] && myForm.get('name')?.touched">Please fill this field<br /></span> -->
+                    <span class="help-block text-danger" *ngIf="myForm.get('name')?.invalid && myForm.get('name')?.touched">Special characters are not allowed</span>
+                </div><br />
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <div class="form-group">
+                    <label><b>Card Number : </b></label>
+                    <input type="text" class="form-control" formControlName='cardNumber' (keypress)='numOnly($event)' maxlength="20">
+                    <span class="help-block text-danger" *ngIf="myForm.get('cardNumber')?.dirty && myForm.get('cardNumber')?.value.toString().length<16 && myForm.get('cardNumber')?.touched ">Value you entered is&nbsp;{{myForm.get('cardNumber')?.value.toString().length}}&nbsp;characters short.But it cannot be shorter than 16 characters</span>
+                    <span class="help-block text-danger" *ngIf="myForm.get('cardNumber')?.dirty && myForm.get('cardNumber')?.value.toString().length>16 && myForm.get('cardNumber')?.touched ">Value you entered is&nbsp;{{myForm.get('cardNumber')?.value.toString().length}}&nbsp;characters long.But it cannot be longer than 16 characters</span>
+                </div><br />
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label><b>Expiration (MM/YY) : </b></label>
+                        <input type="text" class="form-control" formControlName='expirationDate' (keypress)='numOnly($event)' (keyup)="expiryDate($event)" value="{{expirydate}}" maxlength="5" > 
+                        <span class="help-block text-danger" *ngIf="myForm.get('expirationDate')?.dirty && myForm.get('expirationDate')?.touched && myForm.get('expirationDate')?.errors?.['pattern']">Enter valid expiry date</span>
+                    </div>
+                </div>
+                <!-- <div class="col-sm-2 col-md-2 col-lg-2"></div> -->
+                <div class="col-sm-6 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label><b>Security Code : </b></label>
+                        <input type="text" class="form-control" formControlName='securityCode' (keypress)='numOnly($event)' maxlength="5">
+                        <span class="help-block text-danger" *ngIf="myForm.get('securityCode')?.dirty &&myForm.get('securityCode')?.value.toString().length<3 && myForm.get('securityCode')?.touched">Value you entered is&nbsp;{{myForm.get('securityCode')?.value.toString().length}}&nbsp;characters short.But it cannot be shorter than 3 characters</span>
+                        <span class="help-block text-danger" *ngIf="myForm.get('securityCode')?.dirty &&myForm.get('securityCode')?.value.toString().length>3 && myForm.get('securityCode')?.touched">Value you entered is&nbsp;{{myForm.get('securityCode')?.value.toString().length}}&nbsp;characters long.But it cannot be longer than 3 characters</span>
+                    </div><br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-2 col-md-1 col-lg-1">
+                    <button type="submit" class="btn btn-info" [disabled]="!myForm.valid" >Submit</button>
+                </div>
+                <div class="col-sm-2 col-md-1 col-lg-1">
+                    <button class="btn btn-warning" (click)="myForm.reset()" type="reset">Reset</button>
+                </div>
+            </div>        
+    </form>
+</div>

@@ -1,0 +1,53 @@
+<div class="task-section">
+    <form class="form " [formGroup]="taskForm" (ngSubmit)="taskSubmit()">
+    <div class="card text-white bg-primary mb-2  mt-3 mx-auto" style="max-width: 35rem;">
+        <div class="card-header"><h2>Task Details</h2></div>
+        
+            <div class="card-body px-5 mb-2">
+                
+                    <div class="form-group">
+                        <label for="" class="form-label">Task Name : </label>
+                        <input type="text" class="form-control" formControlName="task_Name">
+                        <div class="help-block text-danger" *ngIf="taskForm.get('task_Name')?.invalid && taskForm.get('task_Name')?.touched" >
+                            <span *ngIf="taskForm.get('task_Name')?.errors?.['required']">Please Enter Task Name<br /></span>
+                            <span *ngIf="taskForm.get('task_Name')?.errors?.['minlength']">Below 3 characters is not allowed<br /></span>
+                            <span *ngIf="taskForm.get('task_Name')?.errors?.['maxlength']">Above 50 characters is not allowed<br /></span>
+                            <span *ngIf="taskForm.get('task_Name')?.errors?.['pattern']">Please Start with Alphabet character<br /></span>
+                        </div>
+                    </div>   
+                    <div class="form-group">
+                        <label for="" class="form-label">Task Details : </label>
+                        <textarea class="form-control" formControlName="task_Details" cols="30" rows="5"></textarea>
+                        <div class="help-block text-danger" *ngIf="taskForm.get('task_Details')?.invalid && taskForm.get('task_Details')?.touched" >
+                            <span *ngIf="taskForm.get('task_Details')?.errors?.['required']">Please Enter Task Details<br /></span>
+                            <span *ngIf="taskForm.get('task_Details')?.errors?.['minlength']">Below 3 characters is not allowed<br /></span>
+                            <span *ngIf="taskForm.get('task_Details')?.errors?.['maxlength']">Above 100 characters is not allowed<br /></span>
+                        </div>
+                    </div>    
+                    <div class="form-group">
+                        <label for="" class="form-label">Project Name : </label>
+                        <input type="text" class="form-control" formControlName="project_Name">
+                        <div class="help-block text-danger" *ngIf="taskForm.get('project_Name')?.invalid && taskForm.get('project_Name')?.touched" >
+                            <span *ngIf="taskForm.get('project_Name')?.errors?.['required']">Please Enter Project Name<br /></span>
+                            <span *ngIf="taskForm.get('project_Name')?.errors?.['minlength']">Below 3 characters is not allowed<br /></span>
+                            <span *ngIf="taskForm.get('project_Name')?.errors?.['maxlength']">Above 50 characters is not allowed<br /></span>
+                            <span *ngIf="taskForm.get('project_Name')?.errors?.['pattern']">Please Start with Alphabet character<br /></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="form-label">Created At : </label>
+                        <input type="date" class="form-control" formControlName="createdAt">
+                        <div class="help-block text-danger" *ngIf="taskForm.get('createdAt')?.invalid && taskForm.get('createdAt')?.touched" >
+                            <span *ngIf="taskForm.get('createdAt')?.errors?.['required']">Please Enter Created Date</span>
+                        </div>
+                    </div>             
+                
+            </div>
+            
+            <div class="footer px-5 pt-2 pb-2 text-end">
+                <button type="button" class="btn btn-secondary btn-lg mx-2 text-light" (click)="taskForm.reset()">Reset</button>
+                <button class="btn btn-primary btn-lg" type="submit" [disabled]="taskForm.invalid">Submit</button>
+            </div>            
+      </div>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgb(223, 223, 57);
+    color: rgb(117, 115, 115);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+button a{
+    text-decoration: none;
+}
+button:hover,:focus{
+    background: rgb(184, 184, 8);
+    color: #FFF;
+}

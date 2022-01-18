@@ -1,0 +1,56 @@
+<div>
+    <div>
+      <p>{{values}}</p>
+    </div>
+    <div>
+        <label>Click Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event1 />&nbsp;&nbsp;&nbsp;
+        <button class="btn btn-primary" (click)="myFunction(event1.value)">Click</button><br><br>
+    </div>
+    <div>
+        <label>Double Click Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event2 /><br><br>
+        <button (dblclick)="myFunction(event2.value)">Double Click</button><br><br>
+    </div>
+    <div>
+        <label>Submit Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event3 /><br><br>
+        <button (submit)="myFunction(event3.value)" type="submit">Submit</button><br><br>
+    </div>
+    <div>
+        <label>Key Up Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event4 (keyup)="myFunction(event4.value)"/><br><br>
+    </div>
+    <div>
+        <label>Key Down Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event5 (keydown)="myFunction(event5.value)"/><br><br>
+    </div>
+    <div>
+        <label>Key Press Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event6 (keypress)="myFunction(event6.value)"/><br><br>
+    </div>
+    <div>
+        <label>Blur Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event7 (blur)="myFunction(event7.value)"/><br><br>
+    </div>
+    <div>
+        <label>Mouse Over Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event8 (mouseover)="myFunction(event8.value)"/><br><br>
+    </div>
+    <div>
+        <label>Mouse Leave Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event12 (mouseleave)="myFunction(event12.value)"/><br><br>
+    </div>
+    <div>
+        <label>Input Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event9 (blur)="myFunction(event9.value)"/><br><br>
+    </div>
+    <div>
+        <label>Mouse Move Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event10 (mousemove)="myFunction(event10.value)"/><br><br>
+    </div>
+    <div>
+        <label>Mouse Wheel Event</label>&nbsp;&nbsp;&nbsp;
+        <input type="text" #event11 (mousewheel)="myFunction(event11.value)"/><br><br>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+<div class="child-2">
+<h2>I am from Child Component 1</h2>
+<button (click)="toggle()" class="tog-btn">Table Data...</button><hr>
+<br>
+<table *ngIf="tog" class="table">
+    <thead>
+        <!-- <th>S.No</th> -->
+        <th>S.NO</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Mobile</th>
+        <th>Date</th>
+        <th>Time</th>
+    </thead>
+    <tr *ngFor="let data of parentData;let i=index">
+        <!-- <td>{{data.sno}}</td> -->
+        <td>{{i+1}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.city}}</td>
+        <td>{{data.mobile | append }}</td>
+        <td>{{data.date | date :'dd/MM/yyyy'}}</td>
+        <td>{{data.date | date :'h:mm:ss'}}</td>
+    </tr>
+</table>
+</div>

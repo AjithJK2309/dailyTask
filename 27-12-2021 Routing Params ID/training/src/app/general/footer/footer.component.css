@@ -1,0 +1,13 @@
+.page-footer{
+    background: black;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 2px !important; 
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}

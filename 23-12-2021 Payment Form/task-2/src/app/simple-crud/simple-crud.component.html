@@ -1,0 +1,30 @@
+<div>
+    <br><br>
+    <form class="form-row"  #getVal="ngForm" (ngSubmit)="storeVal(getVal)"> 
+    
+        <div class="form-group col-md-7">
+            <label class="form-label" for="form7Example1">Name</label>
+            <input type="text"  class="form-control" name="name" ngModel/>            
+        </div>
+  
+        <div class="form-outline col-md-7">
+            <label class="form-label" for="form7Example2">Age</label>
+            <input type="text"  class="form-control" name="age" ngModel />            
+        </div>
+
+        <div class="form-outline col-md-7">
+            <label class="form-label" for="form7Example2">Mobile</label>
+            <input type="text"  class="form-control" name="mobile" ngModel />            
+        </div>
+
+        <div class="form-outline col-md-7">
+            <label class="form-label" for="form7Example2">City</label>
+            <input type="text"  class="form-control" name="city" ngModel />            
+        </div>
+
+        <br><br><br><br><br>
+        <div class="col-md-7">
+            <button type="submit" class="btn btn-primary ">Submit</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="flex">
+    <div class="head">
+        <h2>Pagination</h2>
+    </div>
+    <br><br>
+    <div class="image">
+        <img src="{{image[count -1]}}" width="500px" height="300px" alt="">
+        
+    </div>
+    <br><br>
+    <div class="button" >
+        <button (click)="preFunc()" id="pre-btn" >Pre</button>&nbsp;&nbsp;&nbsp;
+        <div *ngFor="let img of image;index as i" >
+        <button *ngIf="i<count+3 && count-3<i" (click)="getImage(i)"  [ngStyle]="i == count-1 ?{ 'background': 'rgb(7, 121, 129)' }:{ 'background': 'rgb(226, 223, 212)' }"><b >{{i+1}}</b>&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;
+        <ng-template #elseBtn>
+            Please friend, login.
+          </ng-template>
+    </div>
+    
+    <!-- <button (click)="countAdd()">...</button>&nbsp;&nbsp; -->
+        <button (click)="nextFunc()" id="next-btn">Next</button>
+    </div>
+</div>

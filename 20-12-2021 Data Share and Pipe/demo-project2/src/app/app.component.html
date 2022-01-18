@@ -1,0 +1,31 @@
+<div>  
+  <h2>Hi i am from app component</h2>
+  <div >
+  <form #getValue="ngForm" (ngSubmit)="formValue(getValue)" class="form">
+    <div class="form-control">
+      <label id="label">Enter Your Name : </label>
+      <input type="text" [(ngModel)]="name" ngModel name="name" autocomplete="off"/><br><br>
+    </div>
+    <div class="form-control">
+      <label>Enter Your City : </label>
+      <input type="text" [(ngModel)]="city" ngModel name="city" autocomplete="off"/><br><br>
+    </div>
+    <div class="form-control">
+      <label>Enter Your Mobile : </label>
+      <input type="text" [(ngModel)]="mobile" ngModel name="mobile" autocomplete="off"/><br><br>
+    </div>
+    <div class="form-control">
+      <label>Date and Time : </label>
+      <input type="text" [(ngModel)]="date" ngModel name="date" [value]="date" autocomplete="off" readonly/><br><br>
+    </div>
+    <button type="submit" class="sub-btn">Submit</button><br>
+  </form>
+  </div>
+
+  <div>
+    <app-sample [parentData]="Arrobj"></app-sample>
+  </div>
+  <div>
+    <app-sample2 (childData)="getData($event)"></app-sample2>
+  </div>
+</div>

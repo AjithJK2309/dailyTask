@@ -1,0 +1,10 @@
+<div>
+    <h3>I am from sibling 1 component</h3>
+    <input type="text" name="name" placeholder="name" [(ngModel)]="name"/><br /><br />
+    <input type="text" name="age" placeholder="age" [(ngModel)]="age"/><br /><br />
+    <button (click)="inputData()">Send Data</button>
+</div>
+<hr />
+<div>
+    <app-grand-sib1></app-grand-sib1>
+</div>
