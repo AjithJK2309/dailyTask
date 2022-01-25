@@ -1,0 +1,58 @@
+<form nz-form [formGroup]="register" (ngSubmit)="onSubmit()">
+    <div nz-row>
+        <div nz-col nzSpan="8" nzOffset="4">
+            <h2>Reister Form</h2><br />
+        </div>
+      </div>
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="5">Name </nz-form-label>
+        <nz-form-control [nzSpan]="8" [nzErrorTip]="Name">
+            <input type="text" nz-input formControlName="name" name="required" maxlength="25" required>
+        </nz-form-control>
+
+        <ng-template #Name let-control>            
+            <ng-container *ngIf="control.hasError('required')">Name is required</ng-container>
+          </ng-template>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Email </nz-form-label>
+        <nz-form-control [nzSpan]="8" [nzErrorTip]="combineTpl">
+            <input type="text" nz-input formControlName="email" name="required" maxlength="25" required>
+        </nz-form-control>
+
+        <ng-template #combineTpl let-control>
+            <ng-container *ngIf="register.invalid && register.touched && register.get('email')?.hasError('pattern')">Enter Valid Email</ng-container>
+            <ng-container *ngIf="control.hasError('maxlength')">MaxLength is 25</ng-container>
+            <ng-container *ngIf="control.hasError('required')">Email is required</ng-container>
+          </ng-template>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Password </nz-form-label>
+        <nz-form-control [nzSpan]="8" [nzErrorTip]="combineTpl2">
+            <input type="password" nz-input formControlName="password" name="password" minlength="6" maxlength="12" required>
+        </nz-form-control>
+
+        <ng-template #combineTpl2 let-control>
+            <ng-container *ngIf="control.hasError('maxlength')">MaxLength is 12</ng-container>
+            <ng-container *ngIf="control.hasError('minlength')">MinLength is 6</ng-container>
+            <ng-container *ngIf="control.hasError('required')">Password is required</ng-container>
+          </ng-template>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Confirm Password </nz-form-label>
+        <nz-form-control [nzSpan]="8" >
+            <input type="password" (blur)="onChange($event)" nz-input formControlName="cpassword" name="password" maxlength="12" required>
+        </nz-form-control>
+        <span *ngIf="register.get('password')?.touched && register.get('password')?.dirty && register.get('password')?.value != register.get('cpassword')?.value"><br />Password Not Match</span>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-control [nzOffset]="5" [nzSpan]="8">
+          <button type="submit" nz-button nzType="primary" [disabled]="register.invalid && register.get('password')?.value != register.get('cpassword')?.value">Submit</button>
+        </nz-form-control>
+      </nz-form-item>
+</form>

@@ -1,0 +1,37 @@
+<form nz-form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <div nz-row>
+        <div nz-col nzSpan="8" nzOffset="4">
+            <h2>Sign-In Form</h2><br />
+        </div>
+      </div>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Email </nz-form-label>
+        <nz-form-control [nzSpan]="8" [nzErrorTip]="combineTpl" name="email"  required>
+            <input type="text" nz-input formControlName="email" name="required" maxlength="25" required>
+        </nz-form-control>
+
+        <ng-template #combineTpl let-control>
+            <ng-container *ngIf="signInForm.invalid && signInForm.touched && signInForm.get('email')?.hasError('pattern')">Enter Valid Email</ng-container>
+            <ng-container *ngIf="control.hasError('maxlength')">MaxLength is 25</ng-container>
+            <ng-container *ngIf="control.hasError('required')">Email is required</ng-container>
+          </ng-template>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5">Password </nz-form-label>
+        <nz-form-control [nzSpan]="8" [nzErrorTip]="combineTpl2">
+            <input type="password" nz-input formControlName="password" name="password" minlength="6" maxlength="12" required>
+        </nz-form-control>
+
+        <ng-template #combineTpl2 let-control>
+            <ng-container *ngIf="control.hasError('maxlength')">MaxLength is 12</ng-container>
+            <ng-container *ngIf="control.hasError('minlength')">MinLength is 6</ng-container>
+            <ng-container *ngIf="control.hasError('required')">Password is required</ng-container>
+          </ng-template>
+    </nz-form-item>
+
+    <nz-form-item>
+        <nz-form-control [nzOffset]="5" [nzSpan]="8">
+          <button type="submit" nz-button nzType="primary" [disabled]="signInForm.invalid">Submit</button>
+        </nz-form-control>
+      </nz-form-item>
+</form>

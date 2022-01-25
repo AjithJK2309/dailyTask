@@ -1,0 +1,35 @@
+<h2>Login Successfull</h2>
+<div>
+    <nz-tabset>
+        <nz-tab nzTitle="File Upload">
+          <form nz-form>
+              <nz-form-item>
+                  <nz-form-label>Upload File</nz-form-label>
+              </nz-form-item>
+              <nz-form-control>
+                <nz-upload
+                nzType="drag"
+                [nzMultiple]="true"
+                (nzChange)="handleChange($event)"
+              >
+                <p class="ant-upload-drag-icon">
+                  <i nz-icon nzType="inbox"></i>
+                </p>
+                <p class="ant-upload-text">Click or drag file to this area to upload</p>
+                <p class="ant-upload-hint">
+                  Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files
+                </p>
+              </nz-upload>
+
+              <img [src]="imgURL" alt="" width="200px" height="200px">
+              </nz-form-control>
+          </form>
+        </nz-tab>
+
+
+        <nz-tab nzTitle="View Files">
+
+        </nz-tab>
+        
+      </nz-tabset>
+</div>

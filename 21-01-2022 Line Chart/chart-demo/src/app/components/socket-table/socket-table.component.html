@@ -1,0 +1,30 @@
+<div class="container head mb-5 mt-3">
+    <h2>Live Data with Table</h2>
+    <button class="btn btn-success" (click)="reconnect()" [ngClass]="{disable:btn==false}">Re-connect</button>
+    <button class="btn btn-info mx-3" (click)="disconnect()" (click)="btn=true" [ngClass]="{disable:btn2==false}">Disconnect</button>
+    <button class="btn btn-danger" (click)="connectionClose()" (click)="btn=false">Close</button>
+  </div>
+  
+  <div class="container table" id="table">
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">Symbol</th>
+          <th scope="col">Prize</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let val of data.reverse() | paginate: { itemsPerPage: 10, currentPage: p };index as i">
+          <th scope="row">{{10 * p + (i+1) - 10}}</th> 
+          <td>{{val.s}}</td>
+          <td>{{val.c}}</td>
+          <td>{{val.E | date: 'medium'}}</td>
+        </tr>   
+        <tr> 
+          <td colspan="4"><pagination-controls (pageChange)="p = $event"></pagination-controls></td>
+        </tr>   
+      </tbody>
+    </table>
+  </div>
