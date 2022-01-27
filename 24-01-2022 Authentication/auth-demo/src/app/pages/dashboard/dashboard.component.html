@@ -2,33 +2,65 @@
 <div>
     <nz-tabset>
         <nz-tab nzTitle="File Upload">
-          <form nz-form>
-              <nz-form-item>
-                  <nz-form-label>Upload File</nz-form-label>
-              </nz-form-item>
-              <nz-form-control>
-                <nz-upload
-                nzType="drag"
-                [nzMultiple]="true"
-                (nzChange)="handleChange($event)"
-              >
-                <p class="ant-upload-drag-icon">
-                  <i nz-icon nzType="inbox"></i>
-                </p>
-                <p class="ant-upload-text">Click or drag file to this area to upload</p>
-                <p class="ant-upload-hint">
-                  Support for a single or bulk upload. Strictly prohibit from uploading company data or other band files
-                </p>
-              </nz-upload>
-
-              <img [src]="imgURL" alt="" width="200px" height="200px">
-              </nz-form-control>
-          </form>
+         
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div formArrayName="fields">
+            <div *ngFor="let val of form.get('fields').controls;let i=index">
+              <div [formGroupName]="i">
+                <nz-form-item>
+                  <nz-form-label nzSpan="5">Profile Pic</nz-form-label>
+                  <nz-form-control nzSpan="7">
+                    <input type="file" nz-input formControlName="pp" (change)="getFile($event,i)">
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label nzSpan="5">Name</nz-form-label>
+                  <nz-form-control nzSpan="7">
+                    <input type="text" nz-input formControlName="name">
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label nzSpan="5">Email</nz-form-label>
+                  <nz-form-control nzSpan="7">
+                    <input type="text" nz-input formControlName="email">
+                  </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                  <nz-form-label nzSpan="5">Mobile</nz-form-label>
+                  <nz-form-control nzSpan="7">
+                    <input type="text" nz-input formControlName="mobile">
+                  </nz-form-control>
+                </nz-form-item>
+              </div>
+            </div>
+          </div>
+            <nz-form-item>
+              <button type="submit" nz-button nzType="primary">Submit</button>
+            </nz-form-item>
+          </form>      
+          <button nz-button nzType="default" (click)="createUser()">Add User</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
         </nz-tab>
 
-
         <nz-tab nzTitle="View Files">
-
+          <table>
+            <thead>
+              <th>S.NO</th>
+              <th>Profile Picture</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let val of data;let i=index">
+                <td>{{i+1}}</td>
+                <td><img  [src]="imageRead(val.pp)"  alt="" width="200px" height="200px"></td>
+                <td>{{val.name}}</td>
+                <td>{{val.email}}</td>
+                <td>{{val.mobile}}</td>
+              </tr>
+            </tbody>
+          </table>
         </nz-tab>
         
       </nz-tabset>

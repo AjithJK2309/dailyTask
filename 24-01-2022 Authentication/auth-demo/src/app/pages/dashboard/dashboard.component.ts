@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormControlName, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { NzUploadChangeParam } from 'ng-zorro-antd/upload';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,37 +11,61 @@ import { NzUploadChangeParam } from 'ng-zorro-antd/upload';
 export class DashboardComponent implements OnInit {
   imagePath : any
   imgURL : any
-  constructor(private router:Router,private msg: NzMessageService) { }
+  form : any
+  addField : any
+  data : any
+  imageFile : any
+  imageUrl : any
+  img : any
+  constructor(private router:Router,private msg: NzMessageService,private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
     if(!localStorage.getItem('token')){
       this.router.navigate([''])
     }
+    
+    this.form = this.formBuilder.group({
+      fields : this.formBuilder.array([])
+    })
   }
 
-  handleChange({ file, fileList }: NzUploadChangeParam): void {
-    const status = file.status;
-    if (status !== 'uploading') {
-      console.log(file, fileList);
-    }
-    if (status === 'done') {
-      this.msg.success(`${file.name} file uploaded successfully.`);
-    } else if (status === 'error') {
-      this.msg.error(`${file.name} file upload failed.`);
-    }
-    // const formData = new FormData();
-    // formData.append(file.uid,file.name,file.type)
-    // console.log(formData)
-    // var reader = new FileReader();
-    // this.imagePath = {file};
-    // reader.readAsDataURL(this.imagePath); 
-    // reader.onload = (_event) => { 
-    //   this.imgURL = reader.result; 
-    // }
-    // console.log(this.imgURL)
-    this.imgURL = file.name
+  addUser(): FormGroup {
+    return this.formBuilder.group({
+      pp : new FormControl('',Validators.required),
+      name : new FormControl('',Validators.required),
+      email : new FormControl('',Validators.required),
+      mobile : new FormControl('',Validators.required)
+    })
+  }
+  users():FormArray{
+    return this.form.get('fields') as FormArray;
+  }
+  createUser(){
+    this.users().push(this.addUser())
+  }
+  onSubmit(){    
+    
+    this.data = this.form.value.fields
   }
 
-  
 
+  getFile(event:any,i:any){
+    // var reader = new FileReader()  
+    // let url
+    // reader.readAsDataURL(event.target.files[0]);
+    // reader.onload = (event: ProgressEvent) => {
+    //   this.img = (<FileReader>event.target).result;
+    // }   
+    return event.target.files[0]
+  }
+
+  imageRead(file:any){
+    // var reader = new FileReader()  
+    // let url
+    // reader.readAsDataURL(file);
+    // reader.onload = (event: ProgressEvent) => {
+    //   url = (<FileReader>event.target).result;
+    // }    
+    // return url    
+  }
 }
